@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Rental Item</title>
+    <link rel="stylesheet" href="upload.css">
+</head>
+<body>
+
+    <div class="upload-container">
+        <h1>Upload Rental Item</h1>
+        <p>Add images and documents for your rental service</p>
+
+        <form action="http://localhost:3000/upload" 
+              method="post" 
+              enctype="multipart/form-data">
+
+            <label>Item Name</label>
+            <input type="text" name="itemName" placeholder="e.g. Apartment / Car" required>
+
+            <label>Category</label>
+            <select name="category" required>
+                <option value="">Select Category</option>
+                <option>House</option>
+                <option>Vehicle</option>
+                <option>Equipment</option>
+                <option>Other</option>
+            </select>
+
+            <label>Upload Images</label>
+            <div class="file-box">
+                <input type="file" name="file1" accept="image/*" multiple required>
+                <span>Click or drag images here</span>
+            </div>
+
+            <label>Upload Documents (optional)</label>
+            <div class="file-box">
+                <input type="file" name="file2" accept=".pdf,.doc,.docx">
+                <span>Upload ownership or agreement file</span>
+            </div>
+
+            <label>Description</label>
+            <textarea name="description" rows="4" placeholder="Describe your rental item..."></textarea>
+
+            <label>Price (per day)</label>
+            <input type="number" name="price" placeholder="e.g. 1500" required>
+
+            <button type="submit">Upload Rental Item</button>
+        </form>
+    </div>
+
+</body>
+</html>
